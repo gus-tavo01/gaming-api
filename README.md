@@ -78,7 +78,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - define controllers workflow
 - define app workflow
 - define api response
-- add .env
+- add .env -> done
+- add or implement secret manager?
 - define endpoints
 - add validator
 - Authentication token based
