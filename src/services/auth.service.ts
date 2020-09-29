@@ -12,6 +12,8 @@ export class AuthService {
   public async validateUser(username: string, password: string) {
     const user = await this.userService.findOne(username);
 
+    // TODO G.A.L.V
+    // hash password, then compare with the DB hashed password
     if (user && user.password === password) {
       const result = { userId: user.userId, username: user.username };
       return result;
