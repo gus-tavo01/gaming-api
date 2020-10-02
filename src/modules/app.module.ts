@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from '../app.controller';
+import { GameClassesController } from 'src/controllers/game-classes.controller';
 import { AuthController } from '../controllers/auth.controller';
-import { AppService } from '../services/app.service';
 import { AuthModule } from './auth.module';
+import { GameClassesModule } from './game-classes.module';
 import { UsersModule } from './users.module';
 
 @Module({
@@ -24,8 +24,8 @@ import { UsersModule } from './users.module';
     // }),
     AuthModule,
     UsersModule,
+    GameClassesModule,
   ],
-  controllers: [AppController, AuthController],
-  providers: [AppService],
+  controllers: [AuthController, GameClassesController],
 })
 export class AppModule {}
