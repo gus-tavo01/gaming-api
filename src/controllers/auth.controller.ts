@@ -2,7 +2,6 @@ import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/guards/jwt.auth.guard';
 import { LocalAuthGuard } from 'src/guards/local.auth.guard';
 import { AuthService } from 'src/services/auth.service';
-import { UsersService } from 'src/services/users.service';
 
 @Controller('/v1/auth')
 export class AuthController {
@@ -15,13 +14,7 @@ export class AuthController {
     return token;
   }
 
-  @Post('/register')
-  async register() {
-    // TODO
-    // create user credentials
-    // create user data in userService
-  }
-
+  // TODO delete this dummy route
   @UseGuards(JwtAuthGuard)
   @Get('/profile')
   async protectedRoute(@Request() req) {
