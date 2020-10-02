@@ -10,10 +10,10 @@ async function bootstrap() {
     .setTitle('Gaming API')
     .setDescription('Gaming API description')
     .setVersion('1.0')
-    .addTag('gaming')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('swagger', app, document);
+  SwaggerModule.setup('/', app, document);
 
   await app.listen(process.env.PORT);
 }
